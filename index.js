@@ -133,7 +133,14 @@ Use the higher order function getAverageGoals to do the following:
 
 function getAverageGoals(/* code here */cb) {
    /* code here */ 
-   
+   let count = 0
+   let totalGoals = cb.map(item => {
+       return item.['Home Team Goals'] + item.['Away Team Goals']
+   }).reduce((acc, item) =>{
+       count++
+       return acc += item;
+   }, 0)
+   return (totalGoals / count).toFixed(2)
 }
 
 
