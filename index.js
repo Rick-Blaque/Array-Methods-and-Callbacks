@@ -107,6 +107,16 @@ hint: the strings returned need to exactly match the string in step 4.
 
 function getWinnersByYear(/* code here */arr, cb, cb2) {
     /* code here */
+    let year = cb(arr)
+    let winner =cb2(arr, cb)
+
+
+    let announce = []
+    for(let i = 0; i < year.length; i++){
+    announce.push(`In ${year[i]}, ${winner[i]} won the world cup!`
+    )
+    }
+    return announce;
 }
 
 
@@ -121,8 +131,9 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-   /* code here */
+function getAverageGoals(/* code here */cb) {
+   /* code here */ 
+   
 }
 
 
