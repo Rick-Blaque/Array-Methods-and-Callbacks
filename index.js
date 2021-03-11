@@ -64,10 +64,10 @@ Use the higher-order function called getYears to do the following:
 
 function getYears(/* code here */arr, cb) {
     /* code here */
-  let years = cb((arr)).map(item => {
+  let years = cb(arr).map(item => {
       return item.Year
   })
-  return years
+  return years;
 
 }
 
@@ -80,9 +80,18 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
+function getWinners(/* code here */arr, cb) {
     /* code here */
+    let winners = cb(arr).map(item => {
+    if (item['Away Team Goals'] > item['Home Team Goals']) {
+        return item.['Away Team Name'];
+        }else{
+          return item.['Home Team Name']
+        }
+    })
+    return winners;
 }
+
 
 
 
@@ -96,7 +105,7 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
+function getWinnersByYear(/* code here */arr, cb, cb2) {
     /* code here */
 }
 
